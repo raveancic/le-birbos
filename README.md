@@ -1,74 +1,94 @@
-Le Birbos
+````markdown
+# Le Birbos
 
-Live website:
+**Live website:**  
 https://le-birbos.vercel.app
 
-Le Birbos is a multilingual website for a mountain house located in Valle Maira (Italy).
-The site is built with React + Vite and deployed on Vercel.
+Le Birbos is a multilingual website for a mountain house located in **Valle Maira (Italy)**.  
+The site is built with **React + Vite** and deployed on **Vercel**.
 
 The website includes:
 
-Multilingual interface (Italian, English, Dutch, German)
+- Multilingual interface (Italian, English, Dutch, German)
+- Image gallery with lightbox
+- Panorama gallery
+- Availability calendar
+- Booking request section
+- Google Maps location section
 
-Image gallery with lightbox
+---
 
-Panorama gallery
-
-Availability calendar
-
-Booking request section
-
-Google Maps location section
-
-Run the Project Locally
+# Run the Project Locally
 
 Open the project folder in your terminal and run:
 
+```bash
 npm install
 npm run dev
+````
 
 Then open the local address shown in the terminal (usually):
 
+```
 http://localhost:5173
-Build the Project
+```
+
+---
+
+# Build the Project
 
 To build the production version:
 
+```bash
 npm run build
+```
 
 To preview the production build locally:
 
+```bash
 npm run preview
-Project Structure
+```
+
+---
+
+# Project Structure
 
 Main files and folders:
 
+```
 src/
   App.jsx
   App.css
   assets/
-Important Files
+```
 
-src/App.jsx
+## Important Files
+
+### src/App.jsx
 
 Contains the main website logic, translations, gallery, and availability calendar.
 
-src/App.css
+### src/App.css
 
 Contains all styling for the website.
 
-src/assets/
+### src/assets/
 
 Contains all images used by the website.
 
-Updating the Occupied Dates
+---
+
+# Updating the Occupied Dates
 
 The availability calendar is managed manually in:
 
+```
 src/App.jsx
+```
 
 Look for this section in the file:
 
+```javascript
 const occupiedDates = [
   "2026-01-03",
   "2026-01-04",
@@ -79,112 +99,145 @@ const occupiedDates = [
   "2026-02-15",
   "2026-03-01"
 ];
+```
 
-These dates will appear as occupied in the calendar.
+These dates will appear as **occupied in the calendar**.
 
-Add a New Occupied Date
+---
+
+## Add a New Occupied Date
 
 Add a new line inside the array:
 
+```javascript
 "2026-08-14",
-Remove an Occupied Date
+```
+
+---
+
+## Remove an Occupied Date
 
 Simply delete the corresponding line from the array.
 
-Date Format
+---
+
+## Date Format
 
 Always use the following format:
 
+```
 YYYY-MM-DD
+```
 
 Example:
 
+```
 2026-07-21
-Publishing Updates
+```
+
+---
+
+# Publishing Updates
 
 After modifying the code (for example changing the occupied dates), run:
 
+```bash
 git add .
 git commit -m "Update occupied dates"
 git push
+```
 
-If the repository is connected to Vercel, the website will update automatically after the push.
+If the repository is connected to **Vercel**, the website will update automatically after the push.
 
-Updating Website Content
+---
+
+# Updating Website Content
 
 Most content can be edited directly in:
 
+```
 src/App.jsx
+```
 
 From there you can change:
 
-All texts
+* All texts
+* Translations
+* Booking email
+* Phone number
+* WhatsApp number
+* Gallery images
+* Occupied dates
 
-Translations
+---
 
-Booking email
-
-Phone number
-
-WhatsApp number
-
-Gallery images
-
-Occupied dates
-
-Images
+# Images
 
 All images used by the website are located in:
 
+```
 src/assets/
+```
 
 If you replace an image:
 
-Keep the same file name, or
-
-Update the import inside src/App.jsx.
+* Keep the same file name, or
+* Update the import inside `src/App.jsx`.
 
 Example:
 
+```javascript
 import heroImg from "./assets/birbos-hero.jpg";
 import interniImg from "./assets/interni.jpg";
-Languages
+```
+
+---
+
+# Languages
 
 The website currently supports the following languages:
 
-Italian
+* Italian
+* English
+* Dutch
+* German
 
-English
+Translations are handled directly inside the `texts` object in:
 
-Dutch
-
-German
-
-Translations are handled directly inside the texts object in:
-
+```
 src/App.jsx
-Deployment
+```
 
-This project is deployed using Vercel.
+---
+
+# Deployment
+
+This project is deployed using **Vercel**.
 
 To publish updates:
 
+```bash
 git add .
 git commit -m "Your update message"
 git push
+```
 
 Vercel will automatically deploy the latest version.
 
-Tech Stack
+---
 
-React
+# Tech Stack
 
-Vite
+* React
+* Vite
+* react-calendar
+* Vercel
 
-react-calendar
+---
 
-Vercel
+# Author
 
-Author
+Website created for **Le Birbos**.
 
-Website created for Le Birbos.
+```
+```
