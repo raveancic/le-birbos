@@ -1,0 +1,772 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f1ea;
+  color: #2f2a24;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(22, 18, 14, 0.35), rgba(22, 18, 14, 0.5)),
+    url("./assets/birbos-hero.jpg") center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.navbar {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.95;
+}
+
+.hero-overlay {
+  width: min(1120px, 92%);
+  margin: auto;
+  padding: 60px 0 110px;
+  max-width: 760px;
+}
+
+.eyebrow,
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  opacity: 0.88;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.96;
+  margin: 18px 0;
+}
+
+.hero-text {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+.hero-buttons,
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.94;
+}
+
+.btn-primary {
+  background: #b8432f;
+  color: white;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.about h2,
+.experiences h2,
+.gallery h2,
+.location h2,
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.about p,
+.location p,
+.contact-text,
+.card p {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(60, 45, 25, 0.08);
+}
+
+.info-card ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  line-height: 2;
+}
+
+.center {
+  text-align: center;
+}
+
+.cards-3 {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-grid {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.photo-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #9f3a28;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card p {
+  padding: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.location-actions {
+  margin-top: 24px;
+}
+
+.location-right {
+  display: grid;
+  gap: 20px;
+}
+
+.location-card {
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+}
+
+.location-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.location-card p {
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.map-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-frame iframe {
+  display: block;
+}
+
+.contact-box {
+  max-width: 860px;
+}
+
+.footer {
+  padding: 30px 20px 50px;
+  text-align: center;
+  color: #6c6258;
+}
+
+.floating-booking {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  background: #b8432f;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.floating-booking:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .two-columns,
+  .cards-3,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero-overlay {
+    padding-bottom: 70px;
+  }
+
+  .photo-card img,
+  .location-card img {
+    height: 240px;
+  }
+}
+
+.photo-card-button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(1000px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 18px;
+  background: white;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lightbox-arrow.left {
+  left: 16px;
+}
+
+.lightbox-arrow.right {
+  right: 16px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: -34px;
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .lightbox-arrow.left {
+    left: 8px;
+  }
+
+  .lightbox-arrow.right {
+    right: 8px;
+  }
+
+  .lightbox-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -4px;
+  }
+}
+
+.photo-card-button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(1000px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 18px;
+  background: white;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lightbox-arrow.left {
+  left: 16px;
+}
+
+.lightbox-arrow.right {
+  right: 16px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: -34px;
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .lightbox-arrow.left {
+    left: 8px;
+  }
+
+  .lightbox-arrow.right {
+    right: 8px;
+  }
+
+  .lightbox-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -4px;
+  }
+}
+
+.availability-legend {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 24px 0 18px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-dot.available {
+  background: #8da27a;
+}
+
+.legend-dot.occupied {
+  background: #b84a3a;
+}
+
+.availability-note {
+  color: #6c6258;
+}
+
+.calendar-card {
+  background: white;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(60, 45, 25, 0.08);
+}
+
+.react-calendar {
+  width: 100%;
+  border: 0 !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f2a24;
+}
+
+.react-calendar__tile {
+  border-radius: 12px;
+  padding: 14px 6px;
+}
+
+.react-calendar__tile--now {
+  background: #efe6da !important;
+}
+
+.available-date {
+  background: #edf3e8;
+  color: #2f2a24;
+}
+
+.occupied-date {
+  background: #f4ddd8 !important;
+  color: #8b2f23 !important;
+  font-weight: 700;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #e7ded2;
+}
+
+.availability-layout {
+  align-items: start;
+}
+
+.availability-legend {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 24px 0 18px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-dot.available {
+  background: #d7decc;
+}
+
+.legend-dot.occupied {
+  background: #d9a29b;
+}
+
+.calendar-card {
+  background: white;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(60, 45, 25, 0.08);
+}
+
+.availability-summary {
+  margin-top: 24px;
+}
+
+.availability-summary h3 {
+  margin-top: 0;
+}
+
+.availability-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: transparent;
+  color: #2f2a24;
+  border: 1px solid #cdbfb0;
+  cursor: pointer;
+}
+
+.warning-text {
+  color: #9a3f35;
+  font-weight: 600;
+}
+
+.react-calendar {
+  width: 100%;
+  border: 0 !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 12px;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f2a24;
+  border-radius: 12px;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background: #efe6da;
+}
+
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: #6c6258;
+}
+
+.react-calendar__tile {
+  border-radius: 12px;
+  padding: 14px 6px;
+}
+
+.react-calendar__tile--now {
+  background: #efe6da !important;
+}
+
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd {
+  background: #b8432f !important;
+  color: white !important;
+}
+
+.react-calendar__tile--inRange {
+  background: #f0dcd7 !important;
+  color: #2f2a24 !important;
+}
+
+.available-date {
+  background: #edf1e8;
+  color: #2f2a24;
+}
+
+.occupied-date {
+  background: #f2ddda !important;
+  color: #8b2f23 !important;
+  font-weight: 700;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #e7ded2;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .language-switcher {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
