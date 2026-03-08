@@ -3,6 +3,19 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./App.css";
 
+import heroImg from "./assets/birbos-hero.jpg";
+import occitanaImg from "./assets/occitana.png";
+import interniImg from "./assets/interni.jpg";
+import serviziImg from "./assets/servizi.jpg";
+import panoramaImg from "./assets/panorama.jpg";
+import camminateImg from "./assets/camminate.jpg";
+import sanMicheleImg from "./assets/san-michele.jpg";
+
+import panorama1Img from "./assets/panorama-1.jpg";
+import panorama2Img from "./assets/panorama-2.jpg";
+import panorama3Img from "./assets/panorama-3.jpg";
+import panorama4Img from "./assets/panorama-4.jpg";
+
 function App() {
   const [language, setLanguage] = useState("it");
 
@@ -421,10 +434,10 @@ function App() {
   const t = texts[language];
 
   const panoramaGallery = [
-    { src: "/src/assets/panorama-1.jpg", alt: `${t.panoramaAlt} 1` },
-    { src: "/src/assets/panorama-2.jpg", alt: `${t.panoramaAlt} 2` },
-    { src: "/src/assets/panorama-3.jpg", alt: `${t.panoramaAlt} 3` },
-    { src: "/src/assets/panorama-4.jpg", alt: `${t.panoramaAlt} 4` },
+    { src: panorama1Img, alt: `${t.panoramaAlt} 1` },
+    { src: panorama2Img, alt: `${t.panoramaAlt} 2` },
+    { src: panorama3Img, alt: `${t.panoramaAlt} 3` },
+    { src: panorama4Img, alt: `${t.panoramaAlt} 4` },
   ];
 
   const occupiedDates = [
@@ -445,28 +458,28 @@ function App() {
 
   const galleryImages = [
     {
-      src: "/src/assets/interni.jpg",
+      src: interniImg,
       alt: t.gallery1,
       label: t.gallery1,
-      gallery: [{ src: "/src/assets/interni.jpg", alt: t.gallery1 }],
+      gallery: [{ src: interniImg, alt: t.gallery1 }],
     },
     {
-      src: "/src/assets/servizi.jpg",
+      src: serviziImg,
       alt: t.gallery2,
       label: t.gallery2,
-      gallery: [{ src: "/src/assets/servizi.jpg", alt: t.gallery2 }],
+      gallery: [{ src: serviziImg, alt: t.gallery2 }],
     },
     {
-      src: "/src/assets/panorama.jpg",
+      src: panoramaImg,
       alt: t.gallery3,
       label: t.gallery3,
       gallery: panoramaGallery,
     },
     {
-      src: "/src/assets/camminate.jpg",
+      src: camminateImg,
       alt: t.gallery4,
       label: t.gallery4,
-      gallery: [{ src: "/src/assets/camminate.jpg", alt: t.gallery4 }],
+      gallery: [{ src: camminateImg, alt: t.gallery4 }],
     },
   ];
 
@@ -545,8 +558,12 @@ function App() {
       "",
       t.emailIntro,
       "",
-      selectedStart ? `${t.checkIn}: ${formatDateLocal(selectedStart)}` : `${t.checkIn}:`,
-      selectedEnd ? `${t.checkOut}: ${formatDateLocal(selectedEnd)}` : `${t.checkOut}:`,
+      selectedStart
+        ? `${t.checkIn}: ${formatDateLocal(selectedStart)}`
+        : `${t.checkIn}:`,
+      selectedEnd
+        ? `${t.checkOut}: ${formatDateLocal(selectedEnd)}`
+        : `${t.checkOut}:`,
       nights > 0 ? `${t.nights}: ${nights}` : `${t.nights}:`,
       "",
       `${t.name}:`,
@@ -565,12 +582,18 @@ function App() {
         {t.floatingBooking}
       </a>
 
-      <header className="hero">
+      <header
+        className="hero"
+        style={{
+          background: `linear-gradient(rgba(22, 18, 14, 0.35), rgba(22, 18, 14, 0.5)), url(${heroImg}) center/cover no-repeat`,
+        }}
+      >
         <nav className="navbar">
           <div className="logo">
-            <img src="/src/assets/occitana.png" alt={t.occitanaAlt} />
+            <img src={occitanaImg} alt={t.occitanaAlt} />
             <div className="logo-text">
               <span className="logo-title">Le Birbos</span>
+              <span className="logo-subtitle">Valle Maira</span>
             </div>
           </div>
 
@@ -585,24 +608,28 @@ function App() {
 
           <div className="language-switcher">
             <button
+              type="button"
               className={language === "it" ? "lang-btn active" : "lang-btn"}
               onClick={() => setLanguage("it")}
             >
               IT
             </button>
             <button
+              type="button"
               className={language === "en" ? "lang-btn active" : "lang-btn"}
               onClick={() => setLanguage("en")}
             >
               EN
             </button>
             <button
+              type="button"
               className={language === "nl" ? "lang-btn active" : "lang-btn"}
               onClick={() => setLanguage("nl")}
             >
               NL
             </button>
             <button
+              type="button"
               className={language === "de" ? "lang-btn active" : "lang-btn"}
               onClick={() => setLanguage("de")}
             >
@@ -801,10 +828,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src="/src/assets/san-michele.jpg"
-                  alt={t.churchAlt}
-                />
+                <img src={sanMicheleImg} alt={t.churchAlt} />
                 <p>{t.churchCaption}</p>
               </a>
 
@@ -863,12 +887,16 @@ function App() {
             className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="lightbox-close" onClick={closeGallery}>
+            <button type="button" className="lightbox-close" onClick={closeGallery}>
               ×
             </button>
 
             {currentGallery.length > 1 && (
-              <button className="lightbox-arrow left" onClick={showPrevImage}>
+              <button
+                type="button"
+                className="lightbox-arrow left"
+                onClick={showPrevImage}
+              >
                 ‹
               </button>
             )}
@@ -880,7 +908,11 @@ function App() {
             />
 
             {currentGallery.length > 1 && (
-              <button className="lightbox-arrow right" onClick={showNextImage}>
+              <button
+                type="button"
+                className="lightbox-arrow right"
+                onClick={showNextImage}
+              >
                 ›
               </button>
             )}
