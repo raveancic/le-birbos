@@ -1,4 +1,3 @@
-````markdown
 # Le Birbos
 
 **Live website:**  
@@ -238,6 +237,3 @@ Vercel will automatically deploy the latest version.
 # Author
 
 Website created for **Le Birbos**.
-
-```
-```
