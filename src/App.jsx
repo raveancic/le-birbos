@@ -593,7 +593,6 @@ function App() {
             <img src={occitanaImg} alt={t.occitanaAlt} />
             <div className="logo-text">
               <span className="logo-title">Le Birbos</span>
-              <span className="logo-subtitle">Valle Maira</span>
             </div>
           </div>
 
